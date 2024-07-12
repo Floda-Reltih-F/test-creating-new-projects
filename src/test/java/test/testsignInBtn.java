@@ -29,7 +29,7 @@ public class testsignInBtn {
 
         By emailInput = By.id("emailInput");
         WebElement emailInputElement = driver.findElement(emailInput);
-        emailInputElement.sendKeys("abbcccTEST@abc.com");
+        emailInputElement.sendKeys("aaabbbcccDTEST@abc.com");
 
         By passwordInput = By.id("passwordInput");
         WebElement passwordInputElement = driver.findElement(passwordInput);
@@ -43,10 +43,12 @@ public class testsignInBtn {
         WebElement signupBtnElement = driver.findElement(signupBtn);
         signupBtnElement.click();
 
+        Thread.sleep(3000);
+
         By profileImage = By.id("profileImage");
         WebElement profileImageElement = driver.findElement(profileImage);
-       // System.out.println(profileImageElement.isDisplayed());
-
+        System.out.println(profileImageElement.isDisplayed());
+        driver.quit();
 
 
 
