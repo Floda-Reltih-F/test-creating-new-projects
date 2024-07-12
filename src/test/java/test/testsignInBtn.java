@@ -20,47 +20,32 @@ public class testsignInBtn {
         System.out.println(title);
 
         By newAccountBtn = By.id("newAccountBtn");
-
         WebElement newAccountBtnElement = driver.findElement(newAccountBtn);
-
         newAccountBtnElement.click();
 
         By nameInput = By.id("nameInput");
-
         WebElement nameInputElement = driver.findElement(nameInput);
-
         nameInputElement.sendKeys("abcTEST");
 
         By emailInput = By.id("emailInput");
-
         WebElement emailInputElement = driver.findElement(emailInput);
-
-        emailInputElement.sendKeys("abcTEST@abc.com");
+        emailInputElement.sendKeys("abbcccTEST@abc.com");
 
         By passwordInput = By.id("passwordInput");
-
         WebElement passwordInputElement = driver.findElement(passwordInput);
-
         passwordInputElement.sendKeys("1abcTEST@abc@@com");
 
         By confirmPasswordInput = By.id("confirmPasswordInput");
-
         WebElement confirmPasswordInputElement = driver.findElement(confirmPasswordInput);
-
         confirmPasswordInputElement.sendKeys("1abcTEST@abc@@com");
 
-
         By signupBtn = By.id("signupBtn");
-
         WebElement signupBtnElement = driver.findElement(signupBtn);
-
         signupBtnElement.click();
 
         By profileImage = By.id("profileImage");
-
         WebElement profileImageElement = driver.findElement(profileImage);
-
-        profileImageElement.isDisplayed();
+       // System.out.println(profileImageElement.isDisplayed());
 
 
 
