@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -25,11 +26,13 @@ public class firefoxDriver {
                 throw new RuntimeException("wrong driver");
             }
 
-            driver.get("https://google.com");
+            driver.get("https://retail.tekschool-students.com/");
             String title = driver.getTitle();
             System.out.println(title);
-            driver.quit();
+           // driver.quit();
+            System.out.println("app closed successfully");
 
+            
         }
 
 
