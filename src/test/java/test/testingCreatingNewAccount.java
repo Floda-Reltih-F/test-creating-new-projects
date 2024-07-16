@@ -6,59 +6,64 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.security.SecureRandom;
+import java.sql.Driver;
 
-public class testsignInBtn {
+public class testingCreatingNewAccount {
     public static void main(String[] args) throws InterruptedException {
+
         WebDriver driver = new ChromeDriver();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         driver.manage().window().maximize();
         driver.get("https://retail.tekschool-students.com/");
         String title1 = driver.getTitle();
         System.out.println(title1);
-
+        System.out.println("*******************");
         String randomEmail = generateRandomEmail();
+        System.out.println("*******************");
         System.out.println("Generated Email: " + randomEmail);
-
+        System.out.println("*******************");
         By signinLink = By.id("signinLink");
         WebElement signinLinkElement = driver.findElement(signinLink);
         signinLinkElement.click();
 
-        String title2 = driver.getTitle();
-        System.out.println(title2);
+        Thread.sleep(1000);
 
         By newAccountBtn = By.id("newAccountBtn");
         WebElement newAccountBtnElement = driver.findElement(newAccountBtn);
         newAccountBtnElement.click();
 
-        By nameInput = By.id("nameInput");
-        WebElement nameInputElement = driver.findElement(nameInput);
-        nameInputElement.sendKeys("abcTEST");
+        By name = By.name("name");
+        WebElement nameElement = driver.findElement(name);
+        nameElement.sendKeys("test");
 
-        By emailInput = By.id("emailInput");
-        WebElement emailInputElement = driver.findElement(emailInput);
-        emailInputElement.sendKeys(randomEmail);
+        By email = By.name("email");
+        WebElement emailElement = driver.findElement(email);
+        emailElement.sendKeys("test@test.com");
 
-        By passwordInput = By.id("passwordInput");
-        WebElement passwordInputElement = driver.findElement(passwordInput);
-        passwordInputElement.sendKeys("1abcTEST@abc@@com");
+        By password = By.name("password");
+        WebElement passwordElement = driver.findElement(password);
+        passwordElement.sendKeys("qwertyu12345!@#ASDF");
 
-        By confirmPasswordInput = By.id("confirmPasswordInput");
-        WebElement confirmPasswordInputElement = driver.findElement(confirmPasswordInput);
-        confirmPasswordInputElement.sendKeys("1abcTEST@abc@@com");
+        By confirmPassword = By.name("confirmPassword");
+        WebElement confirmPasswordElement = driver.findElement(confirmPassword);
+        confirmPasswordElement.sendKeys("qwertyu12345!@#ASDF");
+
+        Thread.sleep(1000);
 
         By signupBtn = By.id("signupBtn");
         WebElement signupBtnElement = driver.findElement(signupBtn);
         signupBtnElement.click();
 
-        String title3 = driver.getTitle();
-        System.out.println(title3);
+        Thread.sleep(1000);
 
-        Thread.sleep(3000);
+        String errorText = driver.findElement(By.className("error")).getText();
+        System.out.println("*******************");
+        System.out.println("Error Message desplaied = " + errorText);
 
-        By profileImage = By.id("profileImage");
-        WebElement profileImageElement = driver.findElement(profileImage);
-        System.out.println(profileImageElement.isDisplayed());
         driver.quit();
+
+
+
 
 
 
@@ -77,6 +82,4 @@ public class testsignInBtn {
         email.append("@abc.com");
         return email.toString();
     }
-    int randomN = (int) Math.random();
-    
 }
